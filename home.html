@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
+
+  <title>Budget Calculator</title>
+</head>
+
+<body style="background-color: rgb(4, 241, 163)">
+  <!-- NAVBAR -->
+
+  <nav class="navbar navbar-expand-lg" style="background-color: rgb(114,47,250); color:white;">
+        <div class="container-fluid">
+            <a class="navbar-brand active" href="#" style="text-decoration: none; font-family: Verdana, Geneva, Tahoma, sans-serif;color: white;">Budgect Calculator</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div    div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                </ul>
+                <form class="d-flex" role="search">
+                    
+                    <a class="btn btn-outline-light me-4" onclick="logout()">Logout</a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+
+  <!-- home page -->
+
+    
+    <div class="container w-75 mt-5" style="display: flex;flex-wrap: wrap;">
+      <div class="card w-100">
+          <h5 class="card-header">Add Income</h5>
+          <div class="card-body ">
+             <div class="mb-4"> <input type="text" class="form-control" id="c_type"  placeholder="Enter Income Type "></div>
+              <div class="mb-4"><input type="text" class="form-control" id="amount" class="w-100 mt-4" placeholder="Enter Amount"></div>
+             <div class="mb-4 text-center"> <button type="button" class="btn btn-outline-success" onclick="add()">Add</button></div>
+          </div>
+        </div>
+        <div class="card w-100">
+          <h5 class="card-header">Add Expense</h5>
+          <div class="card-body">
+              <div class="mb-4"><input type="text" class="form-control" id="type1" class="w-100"  placeholder="Enter Expense Type"></div>
+             <div class="mb-4"> <input type="text" class="form-control" id="amount1" class="w-100" placeholder="Enter Amount "></div>
+             <div class="mb-4 text-center"> <button type="button" onclick="addexpense()" class="btn btn-outline-danger">Save</button></div>
+          </div>
+      </div>
+      
+      <div class="card w-50 my-3 bg-success  border rounded my-2">
+          <div class="card-body text-center">
+              <h2 class="text-center">Balance </h2>
+
+              <h1 id="b"></h1>
+           
+          </div>
+        </div>
+        <div class="card w-50 my-3 bg-danger   border rounded my-2">
+          <div class="card-body text-center">
+              <h2 class="text-center">Expense</h2>
+              <h1 id="s"></h1>
+          
+          </div>
+      </div>
+
+  </div>
+  <div class="text-center"><button class="btn btn-warning w-25" onclick="clearall()">Clearall</button></div>
+
+
+   
+
+
+    <!-- income and expense table -->
+    <div class="row" id="tableContainer">
+  
+      <div class="col-12 my-3">
+        <hr class="mb-5 mt-3">
+        <h2 class="h2 text-center text-light">Income & Expense Details</h2>
+      </div>
+    
+          <div class="col-lg-6 my-3"  id="incometable">
+        <table class="table table-hover border" style="box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;" id="incometable">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Balance</th>
+
+            </tr>
+
+          </thead>
+          <tbody id="itable">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+
+        </table>
+      </div>
+      <div class="col-lg-6 my-3"  id="expensetable">
+        <table class="table table-hover border" style="box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;" id="incometable">
+          <thead>
+            <tr>
+              <th>Type</th>
+              <th>Amount</th>
+              <th>Balance</th>
+
+            </tr>
+
+          </thead>
+          <tbody id="etable">
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+
+        </table>
+
+      </div>
+    </div>
+
+
+
+
+  </div>
+
+</body>
+<script src="./budjet.js"></script>
+</html>
